@@ -1,0 +1,4 @@
+environment-zsh
+===============
+
+zsh settings
