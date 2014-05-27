@@ -5,8 +5,8 @@
 
 ZSH_PROMPT_COLOR='[00;38;5;166m'
 ZSH_RESET_COLOR='[0m'
-ZSH_BASE_RPS1=$'%{\e${ZSH_PROMPT_COLOR}%}%D{%L}:%D{%M}%{\e${ZSH_RESET_COLOR}%}'
 ZSH_BASE_PS1=$'%{\e${ZSH_PROMPT_COLOR}%}%25<..<%~ %#%{\e${ZSH_RESET_COLOR}%} '
+ZSH_BASE_RPS1=$'%{\e${ZSH_PROMPT_COLOR}%}%D{%L}:%D{%M}%{\e${ZSH_RESET_COLOR}%}'
 
 PS1=$ZSH_BASE_PS1
 PS2=$'%{\e${ZSH_PROMPT_COLOR}%}%_ %{\e${ZSH_RESET_COLOR}%}'
@@ -29,11 +29,11 @@ function zle-line-finish {
 	echo $BUFFER | sed -e 's/^\s\+//' | sed -e 's/\s\+$//' | read cmd
 
 	if [[ $cmd = "" ]]; then
-		PS1=${ZSH_BASE_PS1:s/'%D{%L}:%D{%M}'/}
+		PS1=${ZSH_BASE_PS1:s/'%25<..<%~'/}
 	elif [[ $cmd = $last_cmd ]]; then
-		PS1=${ZSH_BASE_PS1:s/'%D{%L}:%D{%M}'/'!'$hnum}
+		PS1=${ZSH_BASE_PS1:s/'%25<..<%~'/'!'$hnum}
 	else
-		PS1=${ZSH_BASE_PS1:s/'%D{%L}:%D{%M}'/'!%h'}
+		PS1=${ZSH_BASE_PS1:s/'%25<..<%~'/'!%h'}
     fi
 	RPS1=''
 
