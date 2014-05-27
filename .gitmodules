@@ -1,6 +1,6 @@
 [submodule "dircolors"]
 	path = dircolors
-	url = https://github.com/seebi/dircolors-solarized
+	url = https://github.com/seebi/dircolors-solarized.git
 [submodule "syntax-highlighting"]
 	path = syntax-highlighting
-	url = https://github.com/zsh-users/zsh-syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
